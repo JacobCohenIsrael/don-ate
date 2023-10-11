@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishLineController : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Finish Line Reached", gameObject);
+        SceneManager.LoadScene("Menu");
     }
 }
