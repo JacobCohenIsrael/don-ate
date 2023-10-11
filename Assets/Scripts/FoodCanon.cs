@@ -6,17 +6,30 @@ public class FoodCanon : MonoBehaviour
 {
     [SerializeField] GameObject projectile;
     [SerializeField] Transform canon;
+    [SerializeField] float minForce;
+    [SerializeField] float maxForce;
+    [SerializeField] float maxHoldTime;
+
+    private float mouseWasLastPressed;
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0)) 
+
+        if (Input.GetMouseButtonDown(0))
         {
-            float throwForce = 10f;
-            Fire(throwForce); 
+            mouseWasLastPressed = Time.time;
         }
+        if (Input.GetMouseButtonUp(0))
+        {
+            float holdTime = Time.time - mouseWasLastPressed;
+            float force = minForce + Mathf.Min(1, holdTime / maxHoldTime) * (maxForce - minForce);
+
+            Throw(force);
+        }
+
     }
 
-    void Fire(float force)
+    void Throw(float force)
     {
         GameObject spawnedProjectile = Instantiate(projectile, canon.position, canon.rotation);
         Rigidbody projectileRigidBody = spawnedProjectile.GetComponent<Rigidbody>();

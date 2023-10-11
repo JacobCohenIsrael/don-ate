@@ -311,6 +311,9 @@ MonoBehaviour:
   projectile: {fileID: 1958321623427999052, guid: 654bb9f0c3f932b4fab20f2fad6a17dc,
     type: 3}
   canon: {fileID: 330585546}
+  minForce: 5
+  maxForce: 20
+  maxHoldTime: 1.5
 --- !u!1001 &386506163
 PrefabInstance:
   m_ObjectHideFlags: 0
