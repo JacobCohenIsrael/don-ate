@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -11,25 +10,25 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
-        startGameButton.onClick.AddListener(onStartGame);
-        quitGameButton.onClick.AddListener(onExitGame);
+        startGameButton.onClick.AddListener(OnStartGame);
+        quitGameButton.onClick.AddListener(OnExitGame);
     }
 
     private void OnDestroy()
     {
-        startGameButton.onClick.RemoveListener(onStartGame);
-        quitGameButton.onClick.RemoveListener(onExitGame);
+        startGameButton.onClick.RemoveListener(OnStartGame);
+        quitGameButton.onClick.RemoveListener(OnExitGame);
     }
 
-    public void onStartGame()
+    private void OnStartGame()
     {
         SceneManager.LoadScene("Game");
     }
 
-    public void onExitGame()
+    private void OnExitGame()
     {
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.ExitPlaymode();
+        EditorApplication.ExitPlaymode();
 # endif
         Application.Quit();
     }
