@@ -1,43 +1,29 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class VehicleSpawner : MonoBehaviour
 {
-    [SerializeField] float gapX;
-    [SerializeField] float spawnInterval;
-    [SerializeField] float spawnProbability;
-
-    [SerializeField] GameObject Nagmash;
-    private Vector3[] spawnPointsOffsets = new Vector3[3];
+    [SerializeField] private float spawnInterval;
+    [SerializeField] private Transform[] spawnTransforms;
+    [SerializeField] private bool isSpawning = true;
+    [SerializeField] private GameObject nagmash;
     void Start()
     {
-        for (int i = 0; i < 3; i++)
-        {
-            spawnPointsOffsets[i] = new Vector3(i * gapX, 0, 0);
-        }
-
         StartCoroutine(SpawnForever());
     }
 
-    void SpawnNagmash(int index)
+    void SpawnNagmash()
     {
-        Instantiate(Nagmash, transform.position + spawnPointsOffsets[index], Quaternion.identity);
+        var spawnTransform = spawnTransforms[Random.Range(0, spawnTransforms.Length)];
+        Instantiate(nagmash, spawnTransform.position, Quaternion.identity);
     }
 
     private IEnumerator SpawnForever()
     {
-        while (true)
+        while (isSpawning)
         {
-            for (int i = 0; i < 3; i++)
-            {
-                float randomValue = Random.Range(0f, 1f);
-
-                if (randomValue < spawnProbability)
-                {
-                    SpawnNagmash(i);
-                }
-            }
-
+            SpawnNagmash();
             yield return new WaitForSeconds(spawnInterval);
 
         }
