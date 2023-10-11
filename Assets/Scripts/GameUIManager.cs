@@ -33,11 +33,11 @@ public class GameUIManager : MonoBehaviour
 
     private void OnDeliver(object sender, EventArgs e)
     {
-        deliveredTMP.text = $"Delivered {delivered.Value}";
+        deliveredTMP.text = $"Delivered: {delivered.Value}";
     }
     
     private void OnCombo(object sender, EventArgs e)
     {
-        comboTMP.text = $"Combo {combo.Value}";
+        comboTMP.text = $"Combo: {combo.Value}";
     }
 }
