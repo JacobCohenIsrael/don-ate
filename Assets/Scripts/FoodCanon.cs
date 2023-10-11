@@ -6,26 +6,36 @@ public class FoodCanon : MonoBehaviour
 {
     [SerializeField] GameObject projectile;
     [SerializeField] Transform canon;
+    [SerializeField] TimeScale forceGauge;
+    [SerializeField] LayerMask layer;
+
     [SerializeField] float minForce;
     [SerializeField] float maxForce;
     [SerializeField] float maxHoldTime;
 
     private float mouseWasLastPressed;
 
+    private void Awake()
+    {
+        forceGauge.SetMaxDuration(maxHoldTime);
+    }
+
     private void Update()
     {
 
         if (Input.GetMouseButtonDown(0))
         {
-            mouseWasLastPressed = Time.time;
+            forceGauge.Start();
         }
         if (Input.GetMouseButtonUp(0))
         {
-            float holdTime = Time.time - mouseWasLastPressed;
-            float force = minForce + Mathf.Min(1, holdTime / maxHoldTime) * (maxForce - minForce);
-
+            float force = forceGauge.Value * (maxForce - minForce) + minForce;
             Throw(force);
+
+            forceGauge.Stop();
         }
+
+
 
     }
 
@@ -37,11 +47,12 @@ public class FoodCanon : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 1000f, layer))
         {
             Vector3 targetPosition = hit.point;
             Vector3 direction = targetPosition - canon.position;
 
+            projectileRigidBody.AddForce(transform.up.normalized * force / 2, ForceMode.VelocityChange);
             projectileRigidBody.AddForce(direction.normalized * force, ForceMode.VelocityChange);
         }
     }
