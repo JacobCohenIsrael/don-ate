@@ -14,6 +14,7 @@ public class FoodCannon : MonoBehaviour
     [SerializeField] float maxHoldTime;
 
     private float mouseWasLastPressed;
+    private AudioSource audioSource;
 
     private void Awake()
     {
@@ -46,6 +47,12 @@ public class FoodCannon : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+
 
         if (Physics.Raycast(ray, out hit, 1000f, layer))
         {
