@@ -15,17 +15,38 @@ public class FoodController : MonoBehaviour
     private IEnumerator OnDecay()
     {
         yield return new WaitForSeconds(secondsToDecay);
-        combo.Decrement();
-        Destroy(gameObject);
+        if(secondsToDecay > 0)
+        {
+            combo.Decrement();
+            Destroy(gameObject);
+        }
+    }
+
+    public void Throw(float force, int layer)
+    {
+        Rigidbody projectileRigidBody = this.GetComponent<Rigidbody>();
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 1000f, layer))
+        {
+            Vector3 targetPosition = hit.point;
+            Vector3 direction = targetPosition - this.transform.position;
+
+            projectileRigidBody.AddForce(transform.up.normalized * force / 2, ForceMode.VelocityChange);
+            projectileRigidBody.AddForce(direction.normalized * force, ForceMode.VelocityChange);
+        }
     }
 
     public void OnDelivery()
     {
-        Destroy(gameObject);
+        if(secondsToDecay > 0)
+            Destroy(gameObject);
     }
 
     private void OnDestroy()
-    {
+    {        
         if (coroutineReference != null)
         {
             StopCoroutine(coroutineReference);

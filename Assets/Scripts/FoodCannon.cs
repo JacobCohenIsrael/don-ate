@@ -8,12 +8,11 @@ public class FoodCannon : MonoBehaviour
     [SerializeField] Transform canon;
     [SerializeField] TimeScale forceGauge;
     [SerializeField] LayerMask layer;
+    [SerializeField] Projection projection;
 
     [SerializeField] float minForce;
     [SerializeField] float maxForce;
     [SerializeField] float maxHoldTime;
-
-    private float mouseWasLastPressed;
 
     private void Awake()
     {
@@ -22,6 +21,7 @@ public class FoodCannon : MonoBehaviour
 
     private void Update()
     {
+        float force = forceGauge.Value * (maxForce - minForce) + minForce;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -29,31 +29,16 @@ public class FoodCannon : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            float force = forceGauge.Value * (maxForce - minForce) + minForce;
-            Throw(force);
-
+            GameObject spawnedProjectile = Instantiate(projectile, canon.position, canon.rotation);
+            spawnedProjectile.GetComponent<FoodController>().Throw(force, layer);
             forceGauge.Stop();
+            projection.Reset();
         }
 
-
-
-    }
-
-    void Throw(float force)
-    {
-        GameObject spawnedProjectile = Instantiate(projectile, canon.position, canon.rotation);
-        Rigidbody projectileRigidBody = spawnedProjectile.GetComponent<Rigidbody>();
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 1000f, layer))
+        if(Input.GetMouseButton(0))
         {
-            Vector3 targetPosition = hit.point;
-            Vector3 direction = targetPosition - canon.position;
-
-            projectileRigidBody.AddForce(transform.up.normalized * force / 2, ForceMode.VelocityChange);
-            projectileRigidBody.AddForce(direction.normalized * force, ForceMode.VelocityChange);
+            projection.SimulateTrajectory(canon.position, force, layer);
         }
+
     }
 }
