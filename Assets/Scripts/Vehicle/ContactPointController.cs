@@ -7,9 +7,11 @@ public class ContactPointController : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        var food = other.gameObject.GetComponent<FoodController>();
+        if (food == null) return;
+        
         delivered.Increment();
         combo.Increment();
-        
-        Destroy(other.gameObject);
+        food.OnDelivery();
     }
 }

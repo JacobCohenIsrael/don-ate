@@ -1,16 +1,24 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Counter combo;
+    [SerializeField] private GameEvent comboStreakEvent;
+
+    private long previousStreak = 0;
+    
+    private void Awake()
     {
-        
+        combo.OnChange += OnComboChange;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnComboChange(object sender, EventArgs e)
     {
-        
+        if (combo.Value > previousStreak && combo.Value % 5 == 0)
+        {
+            comboStreakEvent.Raise();
+            Debug.Log($"Combo Streak ${combo.Value}");
+        }
     }
 }
