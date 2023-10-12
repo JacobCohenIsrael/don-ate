@@ -2,25 +2,25 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "don-ate/GameEvent", fileName = "GameEvent")]
-public class GameEvent : ScriptableObject
+[CreateAssetMenu(menuName = "don-ate/GameEventArg", fileName = "GameEventArg")]
+public class GameEventArg : ScriptableObject
 {
-    private List<Action> actions;
+    private List<Action<object>> actions;
 
     private void OnEnable()
     {
-        actions = new List<Action>();
+        actions = new List<Action<object>>();
     }
 
-    public void Raise()
+    public void Raise(object param)
     {
         for (int i = actions.Count - 1; i >= 0; i--)
         {
-            actions[i].Invoke();
+            actions[i].Invoke(param);
         }
     }
 
-    public void RegisterListener(Action action)
+    public void RegisterListener(Action<object> action)
     {
         if (actions.Contains(action))
         {
@@ -30,7 +30,7 @@ public class GameEvent : ScriptableObject
         actions.Add(action);
     }
     
-    public void UnregisterListener(Action action)
+    public void UnregisterListener(Action<object> action)
     {
         if (actions.Contains(action))
         {

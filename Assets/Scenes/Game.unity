@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1802,16 +1802,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8c208edc6e2384ca30d6d07927485e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1958321623427999052, guid: 654bb9f0c3f932b4fab20f2fad6a17dc,
+  projectile: {fileID: 7006945779766524881, guid: 654bb9f0c3f932b4fab20f2fad6a17dc,
     type: 3}
-  canon: {fileID: 1647960069}
+  cannon: {fileID: 1647960069}
   forceGauge: {fileID: 11400000, guid: 59952d455e46baf48a68059504b79af8, type: 2}
   layer:
     serializedVersion: 2
-    m_Bits: 200
+    m_Bits: 204
   minForce: 4
   maxForce: 12
   maxHoldTime: 1
+  foodChangedEvent: {fileID: 11400000, guid: 06d8526417d56974d9c0052a500cf07b, type: 2}
 --- !u!1001 &1649489056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2000,18 +2001,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1666902072}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1730311692 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3605080150194557425, guid: 687571c04cc997b40b179ef9bd9d9dc4,
-    type: 3}
-  m_PrefabInstance: {fileID: 5430213541058000290}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1858937728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2311,16 +2300,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 872354904452235613, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
+      propertyPath: foodDataList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 872354904452235613, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
+      propertyPath: foodDataList.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: ed420032cfc0868459dd6e8387e6ca9b,
+        type: 2}
     - target: {fileID: 2684615427495047943, guid: 687571c04cc997b40b179ef9bd9d9dc4,
         type: 3}
       propertyPath: m_Name
       value: GameCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6630397963367468128, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+    - target: {fileID: 6075868899800554574, guid: 687571c04cc997b40b179ef9bd9d9dc4,
         type: 3}
-      propertyPath: ForceGaugeImage
-      value: 
-      objectReference: {fileID: 1730311692}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075868899800554574, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075868899800554574, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075868899800554574, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075868899800554574, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075868899800554574, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075868899800554574, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075868899800554574, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 7376037800396599296, guid: 687571c04cc997b40b179ef9bd9d9dc4,
         type: 3}
       propertyPath: m_Pivot.x
