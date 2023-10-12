@@ -12,6 +12,7 @@ public class FoodCannon : MonoBehaviour
     [SerializeField] float maxHoldTime;
 
     [SerializeField] private GameEventArg foodChangedEvent;
+    [SerializeField] private GameEvent foodThrownEvent;
 
     private RaycastHit hit;
 
@@ -72,6 +73,7 @@ public class FoodCannon : MonoBehaviour
         projectileRigidBody.AddForce(transform.up.normalized * force / 2, ForceMode.VelocityChange);
         projectileRigidBody.AddForce(direction.normalized * force, ForceMode.VelocityChange);
         
+        foodThrownEvent.Raise();
         forceGauge.Stop();
     }
     

@@ -7,6 +7,7 @@ public class FoodController : MonoBehaviour
     [SerializeField] private float secondsToDecay = 5.0f;
     private Coroutine coroutineReference;
 
+
     private void Start()
     {
         coroutineReference = StartCoroutine(OnDecay());
@@ -17,6 +18,8 @@ public class FoodController : MonoBehaviour
         yield return new WaitForSeconds(secondsToDecay);
         combo.Decrement();
         Destroy(gameObject);
+
+
     }
 
     public void OnDelivery()

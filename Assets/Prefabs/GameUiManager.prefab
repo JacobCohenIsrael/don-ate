@@ -482,6 +482,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5b95f7d869a73bf44ac7c02cbffe2d57, type: 2}
   - {fileID: 11400000, guid: 3fcde0d994d1ccc4ea8bccc95d2b5648, type: 2}
   - {fileID: 11400000, guid: 57a3022a82cf7d242a9a473660f2a016, type: 2}
+  - {fileID: 11400000, guid: ed420032cfc0868459dd6e8387e6ca9b, type: 2}
   foodUIItemPrefab: {fileID: 4408049165741076362, guid: 57beaf37eff2c2a43a24262fd07577a2,
     type: 3}
   horizontalLayoutTransform: {fileID: 732209165002497574}
