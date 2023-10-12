@@ -13,6 +13,10 @@ public class FoodCannon : MonoBehaviour
 
     [SerializeField] private GameEventArg foodChangedEvent;
 
+    private RaycastHit hit;
+
+    private bool isValidTarget;
+
     private float mouseWasLastPressed;
 
     private void Awake()
@@ -31,33 +35,44 @@ public class FoodCannon : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            forceGauge.Start();
+            PrepareToThrow();
         }
         if (Input.GetMouseButtonUp(0))
         {
             float force = forceGauge.Value * (maxForce - minForce) + minForce;
             Throw(force);
+        }
+    }
 
-            forceGauge.Stop();
+    private void PrepareToThrow()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, 1000f, layer))
+        {
+            isValidTarget = true;
+            forceGauge.Start();
+        }
+        else
+        {
+            isValidTarget = false;
         }
     }
 
     void Throw(float force)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 1000f, layer))
-        {
-            var spawnedProjectile = Instantiate(projectile, cannon.position, cannon.rotation);
-            Rigidbody projectileRigidBody = spawnedProjectile.GetComponent<Rigidbody>();
+        if (!isValidTarget) return;
+        
+        var spawnedProjectile = Instantiate(projectile, cannon.position, cannon.rotation);
+        Rigidbody projectileRigidBody = spawnedProjectile.GetComponent<Rigidbody>();
             
-            Vector3 targetPosition = hit.point;
-            Vector3 direction = targetPosition - cannon.position;
+        Vector3 targetPosition = hit.point;
+        Vector3 direction = targetPosition - cannon.position;
 
-            projectileRigidBody.AddForce(transform.up.normalized * force / 2, ForceMode.VelocityChange);
-            projectileRigidBody.AddForce(direction.normalized * force, ForceMode.VelocityChange);
-        }
+        projectileRigidBody.AddForce(transform.up.normalized * force / 2, ForceMode.VelocityChange);
+        projectileRigidBody.AddForce(direction.normalized * force, ForceMode.VelocityChange);
+        
+        forceGauge.Stop();
     }
     
     private void OnFoodChange(object foodPrefab)
