@@ -1,12 +1,13 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameUIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI deliveredTMP;
     [SerializeField] private TextMeshProUGUI comboTMP;
-    [SerializeField] private TextMeshProUGUI forceTMP;
+    [SerializeField] private Image ForceGaugeImage;
 
     [SerializeField] private Counter delivered;
     [SerializeField] private Counter combo;
@@ -22,7 +23,7 @@ public class GameUIManager : MonoBehaviour
 
     private void Update()
     {
-        forceTMP.text = $"Force: {MathF.Round(forceGauge.Value * 100)}%";
+        ForceGaugeImage.fillAmount = forceGauge.Value;
     }
 
     private void OnDestroy()
