@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FoodCanon : MonoBehaviour
+public class FoodCannon : MonoBehaviour
 {
     [SerializeField] GameObject projectile;
     [SerializeField] Transform canon;

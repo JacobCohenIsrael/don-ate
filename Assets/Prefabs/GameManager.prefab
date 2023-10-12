@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc856ff7cbd4e446af252a9c87840a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combo: {fileID: 11400000, guid: 4cb5cb10a44d1f84ba086c9261b14f7f, type: 2}
+  comboStreakEvent: {fileID: 11400000, guid: e2dfff4f8a2ce0641b88d026ca01b77c, type: 2}
