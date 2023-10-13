@@ -187,21 +187,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2713789219178989828, guid: 25a915b6cba470241a4e42f48c5be07b,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713789219178989828, guid: 25a915b6cba470241a4e42f48c5be07b,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713789219178989828, guid: 25a915b6cba470241a4e42f48c5be07b,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713789219178989828, guid: 25a915b6cba470241a4e42f48c5be07b,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.19
       objectReference: {fileID: 0}
@@ -250,18 +235,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2713789219178989828, guid: 25a915b6cba470241a4e42f48c5be07b,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7079904290879559423, guid: 25a915b6cba470241a4e42f48c5be07b,
         type: 3}
       propertyPath: m_Name
       value: ContactPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3492334421584323221, guid: 25a915b6cba470241a4e42f48c5be07b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25a915b6cba470241a4e42f48c5be07b, type: 3}
