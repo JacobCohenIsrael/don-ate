@@ -6,8 +6,10 @@ public class GameSoundManager : MonoBehaviour
     [SerializeField] private GameEvent comboStreakEvent;
     
     [SerializeField] private AudioClip[] throwSounds;
+    [SerializeField] private AudioSource throwAudioSource;
+    
     [SerializeField] private AudioClip[] comboSounds;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource comboAudioSource;
 
     private void Awake()
     {
@@ -23,15 +25,15 @@ public class GameSoundManager : MonoBehaviour
 
     private void OnComboStreak()
     {
-        PlayRandomSound(comboSounds);
+        PlayRandomSound(comboSounds, comboAudioSource);
     }
 
     private void OnFoodThrown()
     {
-        PlayRandomSound(throwSounds);
+        PlayRandomSound(throwSounds, throwAudioSource);
     }
 
-    private void PlayRandomSound(AudioClip[] audioClips)
+    private void PlayRandomSound(AudioClip[] audioClips, AudioSource audioSource)
     {
         var audioClip = audioClips[Random.Range(0, audioClips.Length)];
         audioSource.clip = audioClip;
