@@ -8,12 +8,15 @@ public class Counter : ScriptableObject
     [SerializeField] private long min;
     [SerializeField] private long max;
 
+
     public event EventHandler OnChange;
-    
+
     public long Value => value;
-    
+
+
     public void Increment()
     {
+
         value = (long)Mathf.Min(max, value + 1);
         OnChange?.Invoke(this, EventArgs.Empty);
     }

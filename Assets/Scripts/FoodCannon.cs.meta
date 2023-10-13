@@ -3,7 +3,11 @@ guid: bc8c208edc6e2384ca30d6d07927485e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - projectile: {instanceID: 0}
+  - canon: {instanceID: 0}
+  - forceGauge: {instanceID: 0}
+  - _clip: {fileID: 8300000, guid: b4b9fb66c1b91475b9c25b2b199b5663, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

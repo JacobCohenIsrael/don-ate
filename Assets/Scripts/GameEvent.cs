@@ -5,8 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "don-ate/GameEvent", fileName = "GameEvent")]
 public class GameEvent : ScriptableObject
 {
-    private readonly List<Action> actions = new List<Action>();
-    
+    private List<Action> actions;
+
+    private void OnEnable()
+    {
+        actions = new List<Action>();
+    }
+
     public void Raise()
     {
         for (int i = actions.Count - 1; i >= 0; i--)
@@ -24,10 +29,7 @@ public class GameEvent : ScriptableObject
         }
         actions.Add(action);
     }
-    /// <summary>
-    /// remove a listener, this will happen when the listener object becomes disabled
-    /// </summary>
-    /// <param name="action">the monobehaviour we are listening 'from'</param>
+    
     public void UnregisterListener(Action action)
     {
         if (actions.Contains(action))

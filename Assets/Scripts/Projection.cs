@@ -10,6 +10,7 @@ public class Projection : MonoBehaviour
     private Rigidbody ghostProjectileRB;
 
     [SerializeField] private GameObject ghostProjectile;
+    [SerializeField] private FoodCannon cannon;
     [SerializeField] private LineRenderer line;
     [SerializeField] private int maxPhysicsFrameIteration;
 
@@ -28,11 +29,10 @@ public class Projection : MonoBehaviour
 
     public void SimulateTrajectory(Vector3 position, float force, int layer)
     {
-        Debug.Log("Hello");
         ghostProjectile.transform.position = position;
         ghostProjectileRB.velocity = Vector3.zero;
 
-        ghostProjectile.GetComponent<FoodController>().Throw(force * 1.1f, layer);
+        cannon.Throw(ghostProjectile, force * 1.1f);
 
         line.positionCount = maxPhysicsFrameIteration;
 
