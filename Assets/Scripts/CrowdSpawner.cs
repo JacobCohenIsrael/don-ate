@@ -6,7 +6,7 @@ public class CrowdSpawner : MonoBehaviour
 {
     [SerializeField] private GameEvent comboStreakEvent;
 
-    [SerializeField] private GameObject crowdPrefab;
+    [SerializeField] private GameObject[] crowdPrefabs;
 
     [SerializeField] private Transform[] crowdTransforms;
     private void Awake()
@@ -21,9 +21,14 @@ public class CrowdSpawner : MonoBehaviour
 
     private void OnComboStreak()
     {
+        int random = Random.Range(0, crowdTransforms.Length);
+        var randomTransform = crowdTransforms[random];
         var randomPositionOffset = Random.onUnitSphere * 1.5f;
         randomPositionOffset.y = 0;
-        var randomTransform = crowdTransforms[Random.Range(0, crowdTransforms.Length)];
-        Instantiate(crowdPrefab, randomTransform.position + randomPositionOffset, Quaternion.identity);
+
+        Instantiate(crowdPrefabs[(random + 3) % crowdPrefabs.Length], randomTransform.position + randomPositionOffset, Quaternion.identity);
+
+        
+
     }
 }
