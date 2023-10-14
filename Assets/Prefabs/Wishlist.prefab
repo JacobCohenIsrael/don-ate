@@ -264,7 +264,7 @@ RectTransform:
   m_Father: {fileID: 6027440029182810537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -281,6 +281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 4037596696456362085}
+  onWishFulfilledEvent: {fileID: 11400000, guid: 8e5e75a452342444d890cc6f19a149b8,
+    type: 2}
   foodData: {fileID: 11400000, guid: 5b95f7d869a73bf44ac7c02cbffe2d57, type: 2}
 --- !u!1 &7444735924432932845
 GameObject:

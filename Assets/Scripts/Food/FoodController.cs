@@ -17,21 +17,17 @@ public class FoodController : MonoBehaviour
     private IEnumerator OnDecay()
     {
         yield return new WaitForSeconds(secondsToDecay);
-        if(secondsToDecay > 0)
-        {
-            combo.Decrement();
-            Destroy(gameObject);
-        }
+        combo.Decrement();
+        Destroy(gameObject);
     }
 
     public void OnDelivery()
     {
-        if(secondsToDecay > 0)
-            Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     private void OnDestroy()
-    {        
+    {
         if (coroutineReference != null)
         {
             StopCoroutine(coroutineReference);

@@ -288,6 +288,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ContactPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 7833939348898221599, guid: 25a915b6cba470241a4e42f48c5be07b,
+        type: 3}
+      propertyPath: onWishFulfilledEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e5e75a452342444d890cc6f19a149b8,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3492334421584323221, guid: 25a915b6cba470241a4e42f48c5be07b, type: 3}
