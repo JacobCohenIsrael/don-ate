@@ -132,6 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   femaleSoldier: {fileID: 6304638174804067853}
   maleSoldier: {fileID: 9221893991801364904}
+  contactPointController: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1001 &1952372659463237348
 PrefabInstance:
   m_ObjectHideFlags: 0
