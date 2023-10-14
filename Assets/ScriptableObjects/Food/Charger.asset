@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f459a984d967bc419cb136879b749c7, type: 3}
   m_Name: Charger
   m_EditorClassIdentifier: 
-  title: Charger
+  title: "\u05DF\u05E2\u05D8\u05DE"
   foodPrefab: {fileID: 9109156461671303555, guid: c4de35a7f394b16479698dbdbd46386b,
     type: 3}
   sprite: {fileID: 21300000, guid: 569742787eeba3d4ca3cfbec54117d70, type: 3}

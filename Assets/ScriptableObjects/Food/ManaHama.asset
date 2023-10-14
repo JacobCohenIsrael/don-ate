@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f459a984d967bc419cb136879b749c7, type: 3}
   m_Name: ManaHama
   m_EditorClassIdentifier: 
-  title: Noodles
+  title: "\u05D4\u05DE\u05D7 \u05D4\u05E0\u05DE"
   foodPrefab: {fileID: 4866995362740310145, guid: 307c144c7707a8949bf962c5a480e86a,
     type: 3}
   sprite: {fileID: 21300000, guid: 3815a4d565641084a93a02767727b3c3, type: 3}

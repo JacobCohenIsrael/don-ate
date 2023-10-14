@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f459a984d967bc419cb136879b749c7, type: 3}
   m_Name: Bottle
   m_EditorClassIdentifier: 
-  title: Water
+  title: "\u05DD\u05D9\u05DE"
   foodPrefab: {fileID: 1988629935957146065, guid: 295411887cbc6c14bb31e176e8308f50,
     type: 3}
   sprite: {fileID: 21300000, guid: cd6a214b419fa344bb6afc646a18f79f, type: 3}
