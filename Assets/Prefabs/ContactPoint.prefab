@@ -140,6 +140,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3fcde0d994d1ccc4ea8bccc95d2b5648, type: 2}
   - {fileID: 11400000, guid: ed420032cfc0868459dd6e8387e6ca9b, type: 2}
   - {fileID: 11400000, guid: 57a3022a82cf7d242a9a473660f2a016, type: 2}
+  contactPointCollider: {fileID: 3202468007894834796}
   wishlistUI: {fileID: 5320495580605534655}
 --- !u!82 &-1154559399589462910
 AudioSource:
@@ -250,6 +251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wishlist
       objectReference: {fileID: 0}
+    - target: {fileID: 2421951995378594037, guid: e4ef614dd78240142a85444022bdf751,
+        type: 3}
+      propertyPath: contactPointController
+      value: 
+      objectReference: {fileID: 7833939348898221599}
     - target: {fileID: 4753248762115112068, guid: e4ef614dd78240142a85444022bdf751,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -366,6 +372,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2713789219178989828}
     m_Modifications:
+    - target: {fileID: 728494813676846213, guid: 6312b50aaa245e94d915aa6559c0e82f,
+        type: 3}
+      propertyPath: contactPointController
+      value: 
+      objectReference: {fileID: 7833939348898221599}
+    - target: {fileID: 1571364743277427052, guid: 6312b50aaa245e94d915aa6559c0e82f,
+        type: 3}
+      propertyPath: contactPointController
+      value: 
+      objectReference: {fileID: 7833939348898221599}
     - target: {fileID: 3885938845176810678, guid: 6312b50aaa245e94d915aa6559c0e82f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -416,6 +432,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3995573638954786536, guid: 6312b50aaa245e94d915aa6559c0e82f,
+        type: 3}
+      propertyPath: contactPointController
+      value: 
+      objectReference: {fileID: 7833939348898221599}
     - target: {fileID: 4369151246504700933, guid: 6312b50aaa245e94d915aa6559c0e82f,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -430,6 +451,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ContactPointView
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328208549421630600, guid: 6312b50aaa245e94d915aa6559c0e82f,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328208549421630600, guid: 6312b50aaa245e94d915aa6559c0e82f,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
