@@ -13,4 +13,9 @@ public class FoodWishlistUI : MonoBehaviour
         image.sprite = foodData.Sprite;
         image.preserveAspect = true;
     }
+
+    public void TurnOff()
+    {
+        this.gameObject.SetActive(false);
+    }
 }

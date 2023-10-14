@@ -11,6 +11,7 @@ public class ContactPointController : MonoBehaviour
     [SerializeField] private FoodWishlistUI wishlistUI;
     
     private FoodData wishlist;
+    private bool requestWasHandled = false;
     
     void Start()
     {
@@ -24,7 +25,7 @@ public class ContactPointController : MonoBehaviour
         var food = other.gameObject.GetComponent<FoodController>();
         if (food == null) return;
 
-        if (food.foodData != wishlist)
+        if (requestWasHandled || food.foodData != wishlist)
         {
             // Calculate a random force within the specified range
             float randomForce = Random.Range(5, 20);
@@ -36,7 +37,9 @@ public class ContactPointController : MonoBehaviour
             food.GetComponent<Rigidbody>().AddForce(randomDirection * randomForce, ForceMode.Impulse);
             return;
         }
-        
+
+        wishlistUI.TurnOff();
+        requestWasHandled = true;
         delivered.Increment();
         combo.Increment();
         food.OnDelivery();
