@@ -38,7 +38,7 @@ public class Projection : MonoBehaviour
 
         for (int i = 0; i < maxPhysicsFrameIteration; i++)
         {
-            physicsScene.Simulate(Time.fixedDeltaTime);
+            physicsScene.Simulate(5 * Time.fixedDeltaTime);
             line.SetPosition(i, ghostProjectile.transform.position);
         }
     }

@@ -2555,7 +2555,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8748892135801146194, guid: 2e8d13dd3807a224cbe0a767a75b3b62, type: 3}
+  - {fileID: 2100000, guid: 4b14930fb56bfae4192957d3e345d267, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2651,7 +2651,7 @@ MonoBehaviour:
   ghostProjectile: {fileID: 1987498258}
   cannon: {fileID: 1647960070}
   line: {fileID: 1647960071}
-  maxPhysicsFrameIteration: 80
+  maxPhysicsFrameIteration: 15
 --- !u!1001 &1649489056
 PrefabInstance:
   m_ObjectHideFlags: 0
