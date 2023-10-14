@@ -12,9 +12,7 @@ public class SoldierAnimationManager : MonoBehaviour
     }
     public void OnWishFulfilled(object sender, EventArgs e)
     {
-        Vector3 oldPosition = this.transform.position;
         animator.SetTrigger("Salute");
-        this.transform.position = new Vector3(oldPosition.x, oldPosition.y - 0.5f, oldPosition.z);
     }
 
     private void OnDestroy()
