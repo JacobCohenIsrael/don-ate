@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class FoodController : MonoBehaviour
 {
+    public FoodData foodData;
     [SerializeField] private Counter combo;
     [SerializeField] private float secondsToDecay = 5.0f;
     private Coroutine coroutineReference;
