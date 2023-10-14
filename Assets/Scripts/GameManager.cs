@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
         {
             comboStreakEvent.Raise();
             previousStreak = combo.Value;
-            Debug.Log($"Combo Streak {combo.Value}");
         }
     }
 }

@@ -23,6 +23,12 @@ public class CrowdSpawner : MonoBehaviour
     {
         int random = Random.Range(0, crowdTransforms.Length);
         var randomTransform = crowdTransforms[random];
-        Instantiate(crowdPrefabs[(random + 3) % crowdPrefabs.Length], randomTransform.position, Quaternion.identity);
+        var randomPositionOffset = Random.onUnitSphere * 1.5f;
+        randomPositionOffset.y = 0;
+
+        Instantiate(crowdPrefabs[(random + 3) % crowdPrefabs.Length], randomTransform.position + randomPositionOffset, Quaternion.identity);
+
+        
+
     }
 }

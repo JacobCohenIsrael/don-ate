@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &34810977
 Transform:
   m_ObjectHideFlags: 0
@@ -183,13 +183,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: df3e95eee83864114903d755508b11b8, type: 3}
   throwAudioSource: {fileID: 1117364803}
   comboSounds:
-  - {fileID: 8300000, guid: f656fc1ec1b664957ac3f568976a63a5, type: 3}
-  - {fileID: 8300000, guid: 985eeb7cf6f574cd69d2c536a2cf81ab, type: 3}
-  - {fileID: 8300000, guid: 15cc8604bb15845788554692dc82ed86, type: 3}
-  - {fileID: 8300000, guid: 0de9e94cbbd5b466e96d0ec062d1926b, type: 3}
-  - {fileID: 8300000, guid: 58568b331231545c699ac812b422b11a, type: 3}
-  - {fileID: 8300000, guid: afbecfca525c24f87bd6c1adbb5e0306, type: 3}
-  - {fileID: 8300000, guid: dab00d904fc934e3092ad3308789d9de, type: 3}
+  - {fileID: 8300000, guid: 3390e0db15ea20840b671a878b1842f7, type: 3}
+  - {fileID: 8300000, guid: d75a6c71b04b11d408703284081ac49b, type: 3}
+  - {fileID: 8300000, guid: aca49daf4786c3f47a97fd4816dc2db2, type: 3}
+  - {fileID: 8300000, guid: 600bd38aa1ee4d841aae9bf596b7b8e2, type: 3}
+  - {fileID: 8300000, guid: b75cd954bef8a884a9fa07bb6781f52d, type: 3}
+  - {fileID: 8300000, guid: e8ba04110bcd94145b80b2aa3e500e20, type: 3}
+  - {fileID: 8300000, guid: 97471a41acc866e4fbaab3a7564f6fd2, type: 3}
+  - {fileID: 8300000, guid: c4cec3053903007409c7cf77b2a83472, type: 3}
   comboAudioSource: {fileID: 502143595}
 --- !u!1 &168172838
 GameObject:
@@ -892,8 +893,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboStreakEvent: {fileID: 11400000, guid: e2dfff4f8a2ce0641b88d026ca01b77c, type: 2}
-  crowdPrefab: {fileID: 5379879473471649479, guid: ac21fb3657562c846bb9f2f398175a97,
-    type: 3}
+  crowdPrefabs:
+  - {fileID: 6963521615779243000, guid: 8b91cba9b9d5d2941a781fff3d39ae82, type: 3}
+  - {fileID: 1282459801088095413, guid: 169b05737362ae448b3c189f617d77a3, type: 3}
+  - {fileID: 3780548450936393540, guid: 35771f6026900c1439e8448ac0ef6041, type: 3}
+  - {fileID: 7325269267966118331, guid: 04a56eaa9bfe50248b205453b2a3c6b9, type: 3}
+  - {fileID: 7776163989270560832, guid: 580e01b97d179f14592f6e5a039815e9, type: 3}
+  - {fileID: 3654137544117315615, guid: df8deba752767da40aecf89081149625, type: 3}
+  - {fileID: 6181967521397897974, guid: 69cbf8171b7715e46bc1804730745ce1, type: 3}
+  - {fileID: 628269629318171427, guid: 43d2302402c03b64caa26e784e3e1ab5, type: 3}
+  - {fileID: 5375253078134692451, guid: 204a0b4410a8d974f87ef2f563ad8f6e, type: 3}
   crowdTransforms:
   - {fileID: 1166335100}
   - {fileID: 750038125}
@@ -1172,7 +1181,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.155
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1506,7 +1515,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.9
   m_Pitch: 1
   Loop: 0
@@ -1987,7 +1996,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

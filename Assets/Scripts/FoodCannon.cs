@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FoodCannon : MonoBehaviour
@@ -19,8 +20,17 @@ public class FoodCannon : MonoBehaviour
 
     private bool isValidTarget;
 
+    private bool hasStarted;
+
+    private IEnumerator EnableThrow()
+    {
+        yield return new WaitForSeconds(3.0f);
+        hasStarted = true;
+    }
+    
     private void Awake()
     {
+        StartCoroutine(EnableThrow());
         foodChangedEvent.RegisterListener(OnFoodChange);
         forceGauge.SetMaxDuration(maxHoldTime);
     }
@@ -32,8 +42,8 @@ public class FoodCannon : MonoBehaviour
 
     private void Update()
     {
-        float force = forceGauge.Value * (maxForce - minForce) + minForce;
-
+        if (!hasStarted) return;
+        
         if (Input.GetMouseButtonDown(0))
         {
             PrepareToThrow();
@@ -42,6 +52,7 @@ public class FoodCannon : MonoBehaviour
         {
             if (isValidTarget)
             {
+                float force = forceGauge.Value * (maxForce - minForce) + minForce;
                 var spawnedProjectile = Instantiate(projectile.gameObject, cannon.position, cannon.rotation);
                 Throw(spawnedProjectile, force, false);
                 forceGauge.Stop();
@@ -52,6 +63,7 @@ public class FoodCannon : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             if (!isValidTarget) return;
+            float force = forceGauge.Value * (maxForce - minForce) + minForce;
             projection.SimulateTrajectory(cannon.position, force, layer);
         }
 
