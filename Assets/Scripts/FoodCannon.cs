@@ -43,7 +43,7 @@ public class FoodCannon : MonoBehaviour
             if (isValidTarget)
             {
                 var spawnedProjectile = Instantiate(projectile.gameObject, cannon.position, cannon.rotation);
-                Throw(spawnedProjectile, force);
+                Throw(spawnedProjectile, force, false);
                 forceGauge.Stop();
                 projection.Reset();
             }
@@ -72,7 +72,7 @@ public class FoodCannon : MonoBehaviour
         }
     }
 
-    public void Throw(GameObject projectile, float force)
+    public void Throw(GameObject projectile, float force, bool isSimulation)
     {
         Rigidbody projectileRigidBody = projectile.GetComponent<Rigidbody>();
 
@@ -82,7 +82,10 @@ public class FoodCannon : MonoBehaviour
         projectileRigidBody.AddForce(transform.up.normalized * force / 2, ForceMode.VelocityChange);
         projectileRigidBody.AddForce(direction.normalized * force, ForceMode.VelocityChange);
 
-        foodThrownEvent.Raise();
+        if (!isSimulation)
+        {
+            foodThrownEvent.Raise();
+        }
     }
 
     private void OnFoodChange(object foodPrefab)

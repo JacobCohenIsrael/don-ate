@@ -30,7 +30,7 @@ public class Projection : MonoBehaviour
         ghostProjectile.transform.position = position;
         ghostProjectileRB.velocity = Vector3.zero;
 
-        cannon.Throw(ghostProjectile, force * 1.1f);
+        cannon.Throw(ghostProjectile, force * 1.1f, true);
 
         line.positionCount = maxPhysicsFrameIteration;
 
