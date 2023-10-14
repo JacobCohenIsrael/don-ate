@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +5,7 @@ using UnityEngine.UI;
 public class FoodUIItem : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private Image selectedImage;
     [SerializeField] private Image image;
     [SerializeField] private Button button;
     [SerializeField] private GameEventArg onFoodChangeEvent;
@@ -16,11 +16,15 @@ public class FoodUIItem : MonoBehaviour
     private void Awake()
     {
         button.onClick.AddListener(OnFoodChangeButtonClicked);
+        onFoodChangeEvent.RegisterListener(OnFoodChanged);
     }
+
+
 
     private void OnDestroy()
     {
         button.onClick.RemoveListener(OnFoodChangeButtonClicked);
+        onFoodChangeEvent.UnregisterListener(OnFoodChanged);
     }
 
     public void Init(FoodData data)
@@ -34,5 +38,11 @@ public class FoodUIItem : MonoBehaviour
     private void OnFoodChangeButtonClicked()
     {
         onFoodChangeEvent.Raise(foodData.FoodPrefab);
+        selectedImage.enabled = true;
+    }
+    
+    private void OnFoodChanged(object obj)
+    {
+        selectedImage.enabled = false;
     }
 }

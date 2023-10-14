@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f459a984d967bc419cb136879b749c7, type: 3}
   m_Name: Bamba
   m_EditorClassIdentifier: 
-  title: Bamba
+  title: "\u05D4\u05D1\u05DE\u05D1"
   foodPrefab: {fileID: 8884969038274240072, guid: 648f354af67ecfd4ab3078f87e67d934,
     type: 3}
   sprite: {fileID: 21300000, guid: 7b5b7852e2f9faa4482f77060b7e0c30, type: 3}

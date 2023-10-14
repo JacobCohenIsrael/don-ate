@@ -82,8 +82,7 @@ public class FoodCannon : MonoBehaviour
         projectileRigidBody.AddForce(transform.up.normalized * force / 2, ForceMode.VelocityChange);
         projectileRigidBody.AddForce(direction.normalized * force, ForceMode.VelocityChange);
 
-        //foodThrownEvent.Raise();
-        //forceGauge.Stop();
+        foodThrownEvent.Raise();
     }
 
     private void OnFoodChange(object foodPrefab)

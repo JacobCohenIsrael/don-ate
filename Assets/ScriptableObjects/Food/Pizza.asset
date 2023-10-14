@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f459a984d967bc419cb136879b749c7, type: 3}
   m_Name: Pizza
   m_EditorClassIdentifier: 
-  title: Pizza
+  title: "\u05D4\u05E6\u05D9\u05E4"
   foodPrefab: {fileID: 7990810926583813079, guid: eb237c4b8508bc1459f82f0a8b4fd703,
     type: 3}
   sprite: {fileID: 21300000, guid: 5d58c0aba4dfc964fad9e929811090b5, type: 3}
