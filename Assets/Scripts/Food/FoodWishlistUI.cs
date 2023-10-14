@@ -10,12 +10,13 @@ public class FoodWishlistUI : MonoBehaviour
 
     private void Awake()
     {
-        contactPointController.onWishFulfilledEvent += OnWishFulfilled;
+        contactPointController = GetComponentInParent<ContactPointController>();
+        contactPointController.OnWishFulfilledEvent += OnWishFulfilled;
     }
 
     private void OnWishFulfilled(object sender, EventArgs e)
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void Init(FoodData data)
@@ -27,6 +28,6 @@ public class FoodWishlistUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        contactPointController.onWishFulfilledEvent -= OnWishFulfilled;
+        contactPointController.OnWishFulfilledEvent -= OnWishFulfilled;
     }
 }
