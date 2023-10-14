@@ -51,8 +51,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""37c25553-f4fc-4698-98bb-dfc4767e4b9f"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""id"": ""698e3614-c4c8-40a9-8a1d-6804c1154c1b"",
+                    ""path"": ""<Touchscreen>/primaryTouch/press"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FoodCannon : MonoBehaviour
@@ -15,54 +16,57 @@ public class FoodCannon : MonoBehaviour
     [SerializeField] private GameEventArg foodChangedEvent;
     [SerializeField] private GameEvent foodThrownEvent;
 
-    [SerializeField] private GameEvent onTapPerformed;
-    [SerializeField] private GameEvent onTapCanceled;
-    
     private RaycastHit hit;
 
     private bool isValidTarget;
 
+    private bool hasStarted;
+
+    private IEnumerator EnableThrow()
+    {
+        yield return new WaitForSeconds(3.0f);
+        hasStarted = true;
+    }
+    
     private void Awake()
     {
-        onTapPerformed.RegisterListener(OnTapPerformed);
-        onTapCanceled.RegisterListener(OnTapCanceled);
+        StartCoroutine(EnableThrow());
         foodChangedEvent.RegisterListener(OnFoodChange);
         forceGauge.SetMaxDuration(maxHoldTime);
     }
 
     private void OnDestroy()
     {
-        onTapPerformed.UnregisterListener(OnTapPerformed);
-        onTapCanceled.UnregisterListener(OnTapCanceled);
         foodChangedEvent.UnregisterListener(OnFoodChange);
     }
-    
-    private void OnTapPerformed()
-    {
-        PrepareToThrow();
-    }
-    
-    private void OnTapCanceled()
-    {
-        if (isValidTarget)
-        {
-            float force = forceGauge.Value * (maxForce - minForce) + minForce;
-            var spawnedProjectile = Instantiate(projectile.gameObject, cannon.position, cannon.rotation);
-            Throw(spawnedProjectile, force, false);
-            forceGauge.Stop();
-            projection.Reset();
-        }
-    }
-
 
     private void Update()
     {
+        if (!hasStarted) return;
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            PrepareToThrow();
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (isValidTarget)
+            {
+                float force = forceGauge.Value * (maxForce - minForce) + minForce;
+                var spawnedProjectile = Instantiate(projectile.gameObject, cannon.position, cannon.rotation);
+                Throw(spawnedProjectile, force, false);
+                forceGauge.Stop();
+                projection.Reset();
+            }
+        }
+
         if (Input.GetMouseButton(0))
         {
-            float force = forceGauge.Value * (maxForce - minForce) + minForce;
             if (!isValidTarget) return;
+            float force = forceGauge.Value * (maxForce - minForce) + minForce;
             projection.SimulateTrajectory(cannon.position, force, layer);
         }
+
     }
 
     private void PrepareToThrow()

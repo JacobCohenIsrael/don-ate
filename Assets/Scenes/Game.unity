@@ -183,13 +183,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: df3e95eee83864114903d755508b11b8, type: 3}
   throwAudioSource: {fileID: 1117364803}
   comboSounds:
-  - {fileID: 8300000, guid: f656fc1ec1b664957ac3f568976a63a5, type: 3}
-  - {fileID: 8300000, guid: 985eeb7cf6f574cd69d2c536a2cf81ab, type: 3}
-  - {fileID: 8300000, guid: 15cc8604bb15845788554692dc82ed86, type: 3}
-  - {fileID: 8300000, guid: 0de9e94cbbd5b466e96d0ec062d1926b, type: 3}
-  - {fileID: 8300000, guid: 58568b331231545c699ac812b422b11a, type: 3}
-  - {fileID: 8300000, guid: afbecfca525c24f87bd6c1adbb5e0306, type: 3}
-  - {fileID: 8300000, guid: dab00d904fc934e3092ad3308789d9de, type: 3}
+  - {fileID: 8300000, guid: 3390e0db15ea20840b671a878b1842f7, type: 3}
+  - {fileID: 8300000, guid: d75a6c71b04b11d408703284081ac49b, type: 3}
+  - {fileID: 8300000, guid: aca49daf4786c3f47a97fd4816dc2db2, type: 3}
+  - {fileID: 8300000, guid: 600bd38aa1ee4d841aae9bf596b7b8e2, type: 3}
+  - {fileID: 8300000, guid: b75cd954bef8a884a9fa07bb6781f52d, type: 3}
+  - {fileID: 8300000, guid: e8ba04110bcd94145b80b2aa3e500e20, type: 3}
+  - {fileID: 8300000, guid: 97471a41acc866e4fbaab3a7564f6fd2, type: 3}
+  - {fileID: 8300000, guid: c4cec3053903007409c7cf77b2a83472, type: 3}
   comboAudioSource: {fileID: 502143595}
 --- !u!1 &168172838
 GameObject:
@@ -1941,53 +1942,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1605625600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1605625602}
-  - component: {fileID: 1605625601}
-  m_Layer: 0
-  m_Name: InputManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1605625601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605625600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c62b369c94b2a24aad80e2c05778502, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onTapPerformedEvent: {fileID: 11400000, guid: ba2fa3086ad109a41b06458b11b53bef,
-    type: 2}
-  onTapCanceledEvent: {fileID: 11400000, guid: 40e5b8968948cfb4baa71b8a247d0ce9, type: 2}
---- !u!4 &1605625602
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605625600}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1627831962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,8 +2128,6 @@ MonoBehaviour:
   maxHoldTime: 1
   foodChangedEvent: {fileID: 11400000, guid: 06d8526417d56974d9c0052a500cf07b, type: 2}
   foodThrownEvent: {fileID: 11400000, guid: 2696339e8b7d5ee41a70dde9ccdd42e7, type: 2}
-  onTapPerformed: {fileID: 11400000, guid: ba2fa3086ad109a41b06458b11b53bef, type: 2}
-  onTapCanceled: {fileID: 11400000, guid: 40e5b8968948cfb4baa71b8a247d0ce9, type: 2}
 --- !u!1 &1708021217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2943,4 +2895,3 @@ SceneRoots:
   - {fileID: 34810977}
   - {fileID: 680781408}
   - {fileID: 1384713513}
-  - {fileID: 1605625602}
