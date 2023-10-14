@@ -8,6 +8,7 @@ public class SoldierAnimationManager : MonoBehaviour
 
     private void Awake()
     {
+        if (contactPointController == null) return;
         contactPointController.onWishFulfilledEvent += OnWishFulfilled;
     }
     public void OnWishFulfilled(object sender, EventArgs e)
@@ -17,6 +18,7 @@ public class SoldierAnimationManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (contactPointController == null) return;
         contactPointController.onWishFulfilledEvent -= OnWishFulfilled;
     }
    

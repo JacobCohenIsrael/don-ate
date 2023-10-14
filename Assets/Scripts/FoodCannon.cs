@@ -15,46 +15,54 @@ public class FoodCannon : MonoBehaviour
     [SerializeField] private GameEventArg foodChangedEvent;
     [SerializeField] private GameEvent foodThrownEvent;
 
+    [SerializeField] private GameEvent onTapPerformed;
+    [SerializeField] private GameEvent onTapCanceled;
+    
     private RaycastHit hit;
 
     private bool isValidTarget;
 
     private void Awake()
     {
+        onTapPerformed.RegisterListener(OnTapPerformed);
+        onTapCanceled.RegisterListener(OnTapCanceled);
         foodChangedEvent.RegisterListener(OnFoodChange);
         forceGauge.SetMaxDuration(maxHoldTime);
     }
 
     private void OnDestroy()
     {
+        onTapPerformed.UnregisterListener(OnTapPerformed);
+        onTapCanceled.UnregisterListener(OnTapCanceled);
         foodChangedEvent.UnregisterListener(OnFoodChange);
     }
+    
+    private void OnTapPerformed()
+    {
+        PrepareToThrow();
+    }
+    
+    private void OnTapCanceled()
+    {
+        if (isValidTarget)
+        {
+            float force = forceGauge.Value * (maxForce - minForce) + minForce;
+            var spawnedProjectile = Instantiate(projectile.gameObject, cannon.position, cannon.rotation);
+            Throw(spawnedProjectile, force, false);
+            forceGauge.Stop();
+            projection.Reset();
+        }
+    }
+
 
     private void Update()
     {
-        float force = forceGauge.Value * (maxForce - minForce) + minForce;
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            PrepareToThrow();
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (isValidTarget)
-            {
-                var spawnedProjectile = Instantiate(projectile.gameObject, cannon.position, cannon.rotation);
-                Throw(spawnedProjectile, force, false);
-                forceGauge.Stop();
-                projection.Reset();
-            }
-        }
-
         if (Input.GetMouseButton(0))
         {
+            float force = forceGauge.Value * (maxForce - minForce) + minForce;
             if (!isValidTarget) return;
             projection.SimulateTrajectory(cannon.position, force, layer);
         }
-
     }
 
     private void PrepareToThrow()
