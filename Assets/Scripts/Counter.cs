@@ -32,4 +32,10 @@ public class Counter : ScriptableObject
         value = 0;
         OnChange?.Invoke(this, EventArgs.Empty);
     }
+
+    public void Reset(long initialValue)
+    {
+        value = initialValue;
+        OnChange?.Invoke(this, EventArgs.Empty);
+    }
 }
