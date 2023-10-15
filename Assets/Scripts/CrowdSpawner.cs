@@ -19,14 +19,13 @@ public class CrowdSpawner : MonoBehaviour
 
     private void OnComboStreak()
     {
-        int random = Random.Range(0, crowdTransforms.Length);
-        var randomTransform = crowdTransforms[random];
+        int random1 = Random.Range(0, crowdTransforms.Length);
+        int random2 = Random.Range(0, crowdPrefabs.Length);
+        var randomTransform = crowdTransforms[random1];
+        var rotation = random1 > 3 ? Quaternion.Euler(0,-90,0) : Quaternion.Euler(0, 90, 0);
         var randomPositionOffset = Random.onUnitSphere * 1.5f;
         randomPositionOffset.y = 0;
 
-        Instantiate(crowdPrefabs[(random + 3) % crowdPrefabs.Length], randomTransform.position + randomPositionOffset, Quaternion.identity);
-
-        
-
+        Instantiate(crowdPrefabs[random2], randomTransform.position + randomPositionOffset, rotation);
     }
 }
