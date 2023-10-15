@@ -7,11 +7,9 @@ public class GameUIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI deliveredTMP;
     [SerializeField] private TextMeshProUGUI comboTMP;
-    [SerializeField] private Image ForceGaugeImage;
 
     [SerializeField] private Counter delivered;
     [SerializeField] private Counter combo;
-    [SerializeField] private TimeScale forceGauge;
 
     private void Awake()
     {
@@ -19,11 +17,6 @@ public class GameUIManager : MonoBehaviour
         delivered.OnChange += OnDeliver;
         combo.Reset();
         delivered.Reset();
-    }
-
-    private void Update()
-    {
-        ForceGaugeImage.fillAmount = forceGauge.Value;
     }
 
     private void OnDestroy()

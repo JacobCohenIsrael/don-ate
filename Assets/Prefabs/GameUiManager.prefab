@@ -54,10 +54,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deliveredTMP: {fileID: 1085281098321675087}
   comboTMP: {fileID: 116500168620602776}
-  ForceGaugeImage: {fileID: 6943384566286331859}
   delivered: {fileID: 11400000, guid: 0fbff57cfe573084f967e59894d1b69b, type: 2}
   combo: {fileID: 11400000, guid: 4cb5cb10a44d1f84ba086c9261b14f7f, type: 2}
-  forceGauge: {fileID: 11400000, guid: 59952d455e46baf48a68059504b79af8, type: 2}
 --- !u!1 &3805372436039491989
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +495,7 @@ GameObject:
   - component: {fileID: 5266109864990982843}
   - component: {fileID: 8559513680335197536}
   - component: {fileID: 6943384566286331859}
+  - component: {fileID: 2702402696468983466}
   m_Layer: 5
   m_Name: ForceGauge
   m_TagString: Untagged
@@ -562,6 +561,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2702402696468983466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8686482567502232573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d762c7d5e3692d4ea44fa38f6bfa8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLeft: {fileID: 11400000, guid: 441594d8d2609484f837c7d613b5631e, type: 2}
+  timeLeftText: {fileID: 6802190196034074696}
 --- !u!1 &8813285410473462729
 GameObject:
   m_ObjectHideFlags: 0

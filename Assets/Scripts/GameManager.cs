@@ -1,16 +1,25 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Counter combo;
     [SerializeField] private GameEvent comboStreakEvent;
-
-    private long previousStreak;
+    [SerializeField] private Counter timeLeft;
+    [SerializeField] private GameEvent gameOverEvent;
+    [SerializeField] private long gameDurationInSeconds;
     
+    private long previousStreak;
     private void Awake()
     {
         combo.OnChange += OnComboChange;
+    }
+
+    private void Start()
+    {
+        timeLeft.Reset(gameDurationInSeconds);
+        StartCoroutine(CountDownToGameOver());
     }
 
     private void OnDestroy()
@@ -25,5 +34,17 @@ public class GameManager : MonoBehaviour
             comboStreakEvent.Raise();
             previousStreak = combo.Value;
         }
+    }
+    
+    private IEnumerator CountDownToGameOver()
+    {
+        yield return new WaitForSeconds(3);
+        while (timeLeft.Value > 0)
+        {
+            yield return new WaitForSeconds(1);
+            timeLeft.Decrement();
+        }
+        gameOverEvent.Raise();
+        yield return null;
     }
 }
