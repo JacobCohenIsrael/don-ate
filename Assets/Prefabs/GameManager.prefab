@@ -46,3 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combo: {fileID: 11400000, guid: 4cb5cb10a44d1f84ba086c9261b14f7f, type: 2}
   comboStreakEvent: {fileID: 11400000, guid: e2dfff4f8a2ce0641b88d026ca01b77c, type: 2}
+  timeLeft: {fileID: 11400000, guid: 441594d8d2609484f837c7d613b5631e, type: 2}
+  gameOverEvent: {fileID: 11400000, guid: 0d7502f8deb6ebe4da4a6118faf4ad1d, type: 2}
+  gameDurationInSeconds: 90
