@@ -4,7 +4,6 @@ using UnityEngine;
 public class FoodController : MonoBehaviour
 {
     public FoodData foodData;
-    [SerializeField] private Counter combo;
     [SerializeField] private float secondsToDecay = 5.0f;
     private Coroutine coroutineReference;
 
@@ -17,7 +16,6 @@ public class FoodController : MonoBehaviour
     private IEnumerator OnDecay()
     {
         yield return new WaitForSeconds(secondsToDecay);
-        combo.Decrement();
         Destroy(gameObject);
     }
 

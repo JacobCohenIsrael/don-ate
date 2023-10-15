@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void OnComboChange(object sender, EventArgs e)
     {
-        if (combo.Value > previousStreak && combo.Value % 5 == 0)
+        if (combo.Value > previousStreak)
         {
             comboStreakEvent.Raise();
             previousStreak = combo.Value;
