@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FoodCannon : MonoBehaviour
@@ -6,6 +7,7 @@ public class FoodCannon : MonoBehaviour
     [SerializeField] Transform cannon;
     [SerializeField] TimeScale forceGauge;
     [SerializeField] LayerMask layer;
+    [SerializeField] Projection projection;
 
     [SerializeField] float minForce;
     [SerializeField] float maxForce;
@@ -18,10 +20,17 @@ public class FoodCannon : MonoBehaviour
 
     private bool isValidTarget;
 
-    private float mouseWasLastPressed;
+    private bool hasStarted;
 
+    private IEnumerator EnableThrow()
+    {
+        yield return new WaitForSeconds(3.0f);
+        hasStarted = true;
+    }
+    
     private void Awake()
     {
+        StartCoroutine(EnableThrow());
         foodChangedEvent.RegisterListener(OnFoodChange);
         forceGauge.SetMaxDuration(maxHoldTime);
     }
@@ -33,16 +42,31 @@ public class FoodCannon : MonoBehaviour
 
     private void Update()
     {
-
+        if (!hasStarted) return;
+        
         if (Input.GetMouseButtonDown(0))
         {
             PrepareToThrow();
         }
         if (Input.GetMouseButtonUp(0))
         {
-            float force = forceGauge.Value * (maxForce - minForce) + minForce;
-            Throw(force);
+            if (isValidTarget)
+            {
+                float force = forceGauge.Value * (maxForce - minForce) + minForce;
+                var spawnedProjectile = Instantiate(projectile.gameObject, cannon.position, cannon.rotation);
+                Throw(spawnedProjectile, force, false);
+                forceGauge.Stop();
+                projection.Reset();
+            }
         }
+
+        if (Input.GetMouseButton(0))
+        {
+            if (!isValidTarget) return;
+            float force = forceGauge.Value * (maxForce - minForce) + minForce;
+            projection.SimulateTrajectory(cannon.position, force, layer);
+        }
+
     }
 
     private void PrepareToThrow()
@@ -60,23 +84,22 @@ public class FoodCannon : MonoBehaviour
         }
     }
 
-    void Throw(float force)
+    public void Throw(GameObject projectile, float force, bool isSimulation)
     {
-        if (!isValidTarget) return;
-        
-        var spawnedProjectile = Instantiate(projectile, cannon.position, cannon.rotation);
-        Rigidbody projectileRigidBody = spawnedProjectile.GetComponent<Rigidbody>();
-            
+        Rigidbody projectileRigidBody = projectile.GetComponent<Rigidbody>();
+
         Vector3 targetPosition = hit.point;
         Vector3 direction = targetPosition - cannon.position;
 
         projectileRigidBody.AddForce(transform.up.normalized * force / 2, ForceMode.VelocityChange);
         projectileRigidBody.AddForce(direction.normalized * force, ForceMode.VelocityChange);
-        
-        foodThrownEvent.Raise();
-        forceGauge.Stop();
+
+        if (!isSimulation)
+        {
+            foodThrownEvent.Raise();
+        }
     }
-    
+
     private void OnFoodChange(object foodPrefab)
     {
         projectile = (FoodController)foodPrefab;

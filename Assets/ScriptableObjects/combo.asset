@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba6f507fc345c54c9d97a35c90e9900, type: 3}
   m_Name: combo
   m_EditorClassIdentifier: 
-  value: 0
+  value: 49
   min: 0
-  max: 50
+  max: 200

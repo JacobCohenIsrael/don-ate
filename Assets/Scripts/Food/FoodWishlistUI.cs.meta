@@ -3,7 +3,10 @@ guid: 2ba4459a7bdc37c44979aea9b4a31753
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - image: {instanceID: 0}
+  - onWishFulfilledEvent: {instanceID: 0}
+  - foodData: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
