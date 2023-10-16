@@ -48,26 +48,22 @@ public class FoodCannon : MonoBehaviour
     private void Update()
     {
         if (!hasStarted) return;
-
+        
         if (Input.GetMouseButtonDown(0))
         {
             PrepareToThrow();
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && isValidTarget)
         {
-            if (isValidTarget)
-            {
-                float force = forceGauge.Value * (maxForce - minForce) + minForce;
-                var spawnedProjectile = Instantiate(projectile.gameObject, cannon.position, cannon.rotation);
-                Throw(spawnedProjectile, force, false);
-                forceGauge.Stop();
-                projection.Reset();
-            }
+            float force = forceGauge.Value * (maxForce - minForce) + minForce;
+            var spawnedProjectile = Instantiate(projectile.gameObject, cannon.position, cannon.rotation);
+            Throw(spawnedProjectile, force, false);
+            forceGauge.Stop();
+            projection.Reset();
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && isValidTarget)
         {
-            if (!isValidTarget) return;
             float force = forceGauge.Value * (maxForce - minForce) + minForce;
             projection.SimulateTrajectory(cannon.position, force, layer);
         }
