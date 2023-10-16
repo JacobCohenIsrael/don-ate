@@ -117,6 +117,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 59952d455e46baf48a68059504b79af8,
         type: 2}
+    - target: {fileID: 1085281098321675087, guid: 84e4a02c32fb8114aba98101b938c1df,
+        type: 3}
+      propertyPath: m_text
+      value: "10 :\u05D3\u05D5\u05E7\u05D9\u05E0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085281098321675087, guid: 84e4a02c32fb8114aba98101b938c1df,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085281098321675087, guid: 84e4a02c32fb8114aba98101b938c1df,
+        type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1770893689903642048, guid: 84e4a02c32fb8114aba98101b938c1df,
         type: 3}
       propertyPath: m_Name
@@ -251,6 +266,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7376037800396599296}
     m_Modifications:
+    - target: {fileID: 477496184483810243, guid: a841a5a3efeb45f4491256f357ed10dd,
+        type: 3}
+      propertyPath: m_text
+      value: "!\u05DD\u05D9\u05DC\u05D9\u05D9\u05D7\u05D5 \u05EA\u05D5\u05DC\u05D9\u05D9\u05D7
+        100 \u05EA\u05D7\u05DE\u05D9\u05E9"
+      objectReference: {fileID: 0}
+    - target: {fileID: 477496184483810243, guid: a841a5a3efeb45f4491256f357ed10dd,
+        type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2695538738488279231, guid: a841a5a3efeb45f4491256f357ed10dd,
         type: 3}
       propertyPath: m_Name
@@ -359,6 +385,21 @@ PrefabInstance:
     - target: {fileID: 5605983918192014444, guid: a841a5a3efeb45f4491256f357ed10dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485718800513748318, guid: a841a5a3efeb45f4491256f357ed10dd,
+        type: 3}
+      propertyPath: m_text
+      value: "!10 :\u05D0\u05D9\u05E9"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485718800513748318, guid: a841a5a3efeb45f4491256f357ed10dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485718800513748318, guid: a841a5a3efeb45f4491256f357ed10dd,
+        type: 3}
+      propertyPath: m_isRightToLeft
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8109357227018204067, guid: a841a5a3efeb45f4491256f357ed10dd,

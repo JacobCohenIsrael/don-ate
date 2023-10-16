@@ -31,6 +31,6 @@ public class GameUIManager : MonoBehaviour
 
     private void OnDeliver(object sender, EventArgs e)
     {
-        deliveredTMP.text = $"ניקוד: {delivered.Value}";
+        deliveredTMP.text = $"{delivered.Value}: דוקינ";
     }
 }
