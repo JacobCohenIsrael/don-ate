@@ -95,6 +95,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Character_BusinessMan_Suit
       objectReference: {fileID: 0}
+    - target: {fileID: 3971552702441972212, guid: 496c8ec1b51572947b2cb301eec4b137,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 282bd49efd9c0e94a811c3ed62b582a2, type: 2}
     - target: {fileID: 5866666021909216657, guid: 496c8ec1b51572947b2cb301eec4b137,
         type: 3}
       propertyPath: m_Controller
