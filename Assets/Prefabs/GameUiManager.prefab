@@ -56,6 +56,7 @@ MonoBehaviour:
   comboTMP: {fileID: 116500168620602776}
   delivered: {fileID: 11400000, guid: 0fbff57cfe573084f967e59894d1b69b, type: 2}
   combo: {fileID: 11400000, guid: 4cb5cb10a44d1f84ba086c9261b14f7f, type: 2}
+  gameOverEvent: {fileID: 11400000, guid: 0d7502f8deb6ebe4da4a6118faf4ad1d, type: 2}
 --- !u!1 &3805372436039491989
 GameObject:
   m_ObjectHideFlags: 0

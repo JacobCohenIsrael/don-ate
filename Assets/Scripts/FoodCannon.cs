@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class FoodCannon : MonoBehaviour
 {
@@ -47,6 +48,8 @@ public class FoodCannon : MonoBehaviour
     private void Update()
     {
         if (!hasStarted) return;
+
+        if (EventSystem.current.IsPointerOverGameObject() && !isValidTarget) return;
         
         if (Input.GetMouseButtonDown(0))
         {
@@ -61,6 +64,7 @@ public class FoodCannon : MonoBehaviour
                 Throw(spawnedProjectile, force, false);
                 forceGauge.Stop();
                 projection.Reset();
+                isValidTarget = false;
             }
         }
 
@@ -70,7 +74,6 @@ public class FoodCannon : MonoBehaviour
             float force = forceGauge.Value * (maxForce - minForce) + minForce;
             projection.SimulateTrajectory(cannon.position, force, layer);
         }
-
     }
 
     private void PrepareToThrow()
