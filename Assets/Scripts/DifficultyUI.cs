@@ -1,17 +1,22 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DifficultyUI : MonoBehaviour
 {
+    [SerializeField] private Slider difficultySlider;
     [SerializeField] private TextMeshProUGUI difficultyText;
     [SerializeField] private DifficultySettings easy;
     [SerializeField] private DifficultySettings normal;
     [SerializeField] private DifficultySettings hard;
     [SerializeField] private DifficultyManager difficultyManager;
+
+    private void Start()
+    {
+        difficultySlider.value = 1;
+        difficultyManager.SetDifficulty(normal);
+    }
 
     public void OnDifficultyValueChanged(float value)
     {
