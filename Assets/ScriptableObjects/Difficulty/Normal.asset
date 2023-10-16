@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed6549e380d1e649b57eac89deec706, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: 
+  title: "\u05DC\u05D9\u05D2\u05E8"
   numberOfLanes: 2
   wishlistSize: 2
-  vehicleSpeed: 0.5
+  vehicleSpeed: 0.45
   vehicleAccelerationDelay: 20
