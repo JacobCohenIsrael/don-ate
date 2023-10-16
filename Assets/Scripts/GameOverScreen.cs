@@ -25,7 +25,7 @@ public class GameOverScreen : MonoBehaviour
         float highScore = PlayerPrefs.GetFloat("HighScore", 0);
         float score = delivered.Value;
 
-        scoreText.text = $"שימחת {score} חיילות וחיילים!";
+        scoreText.text = $"!םילייחו תולייח {score} תחמיש";
 
         if(score > highScore)
         {
@@ -35,7 +35,7 @@ public class GameOverScreen : MonoBehaviour
             highScoreAlertText.gameObject.SetActive(true);
         }
 
-        highScoreText.text = $"שיא: {highScore}!";
+        highScoreText.text = $"!{highScore}: איש";
     }
 
     public void RestartGame()
