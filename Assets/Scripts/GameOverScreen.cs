@@ -10,17 +10,18 @@ public class GameOverScreen : MonoBehaviour
     [SerializeField] private Counter delivered;
 
     [SerializeField] private GameEvent gameOverEvent;
+    [SerializeField] private AudioSource gameOverAudioSource;
 
     private void Awake()
     {
         gameOverEvent.RegisterListener(OnGameOver);
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void OnGameOver()
     {
-        this.gameObject.SetActive(true);
-
+        gameObject.SetActive(true);
+        gameOverAudioSource.Play();
         float highScore = PlayerPrefs.GetFloat("HighScore", 0);
         float score = delivered.Value;
 
