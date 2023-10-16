@@ -49,8 +49,6 @@ public class FoodCannon : MonoBehaviour
     {
         if (!hasStarted) return;
 
-        if (EventSystem.current.IsPointerOverGameObject() && !isValidTarget) return;
-        
         if (Input.GetMouseButtonDown(0))
         {
             PrepareToThrow();
