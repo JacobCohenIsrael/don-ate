@@ -2791,7 +2791,7 @@ PrefabInstance:
     - target: {fileID: 881071394551809642, guid: 687571c04cc997b40b179ef9bd9d9dc4,
         type: 3}
       propertyPath: m_fontSize
-      value: 70
+      value: 89.5
       objectReference: {fileID: 0}
     - target: {fileID: 881071394551809642, guid: 687571c04cc997b40b179ef9bd9d9dc4,
         type: 3}
@@ -2925,12 +2925,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630397963367468128, guid: 687571c04cc997b40b179ef9bd9d9dc4,
         type: 3}
-      propertyPath: gameOverEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 0d7502f8deb6ebe4da4a6118faf4ad1d,
-        type: 2}
-    - target: {fileID: 6630397963367468128, guid: 687571c04cc997b40b179ef9bd9d9dc4,
-        type: 3}
       propertyPath: ForceGaugeImage
       value: 
       objectReference: {fileID: 1730311692}
@@ -3047,7 +3041,7 @@ PrefabInstance:
     - target: {fileID: 8855473292211495611, guid: 687571c04cc997b40b179ef9bd9d9dc4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
