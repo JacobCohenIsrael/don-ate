@@ -34,6 +34,7 @@ public class CrowdSpawner : MonoBehaviour
     private void OnComboStreak()
     {
         SpawnRandomCrowd();
+        SpawnRandomCrowd();
     }
 
     private void SpawnRandomCrowd()
@@ -45,7 +46,8 @@ public class CrowdSpawner : MonoBehaviour
         var randomTransform = isTransformLeftSide ? crowdTransformsLeft[randomTransformIndex] : crowdTransformsRight[randomTransformIndex % crowdTransformsLeft.Length];
         var rotation = isTransformLeftSide ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(0, -90, 0);
 
-        var randomPositionOffset = Random.onUnitSphere * 1.5f;
+        var randomPositionOffset = Random.onUnitSphere * 0.4f;
+        randomPositionOffset.z *= 5;
         randomPositionOffset.y = 0;
 
         Instantiate(crowdPrefabs[randomPrefabIndex], randomTransform.position + randomPositionOffset, rotation);
