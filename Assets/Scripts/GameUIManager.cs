@@ -10,11 +10,13 @@ public class GameUIManager : MonoBehaviour
 
     [SerializeField] private Counter delivered;
     [SerializeField] private Counter combo;
+    [SerializeField] private GameEvent gameOverEvent;
 
     private void Awake()
     {
         combo.OnChange += OnCombo;
         delivered.OnChange += OnDeliver;
+        gameOverEvent.RegisterListener(OnGameOver);
         combo.Reset();
         delivered.Reset();
     }
@@ -23,6 +25,13 @@ public class GameUIManager : MonoBehaviour
     {
         combo.OnChange -= OnCombo;
         delivered.OnChange -= OnDeliver;
+        gameOverEvent.UnregisterListener(OnGameOver);
+
+    }
+
+    private void OnGameOver()
+    {
+        this.gameObject.SetActive(false);
     }
 
     private void OnDeliver(object sender, EventArgs e)
