@@ -12,6 +12,16 @@ public class DifficultyUI : MonoBehaviour
     [SerializeField] private DifficultySettings hard;
     [SerializeField] private DifficultyManager difficultyManager;
 
+    private void Awake()
+    {
+        difficultySlider.onValueChanged.AddListener(OnDifficultyValueChanged);
+    }
+
+    private void OnDestroy()
+    {
+        difficultySlider.onValueChanged.RemoveListener(OnDifficultyValueChanged);
+    }
+
     private void Start()
     {
         difficultySlider.value = 1;
