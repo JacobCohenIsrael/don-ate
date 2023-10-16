@@ -64,7 +64,6 @@ public class FoodCannon : MonoBehaviour
                 Throw(spawnedProjectile, force, false);
                 forceGauge.Stop();
                 projection.Reset();
-                isValidTarget = false;
             }
         }
 
