@@ -2556,11 +2556,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1506533104631171285, guid: 5d98adfc0923aff48a3085fa79c385e3,
-        type: 3}
-      propertyPath: gameDurationInSeconds
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1864938213895411278, guid: 5d98adfc0923aff48a3085fa79c385e3,
         type: 3}
       propertyPath: m_Name
@@ -2872,6 +2867,11 @@ PrefabInstance:
     - target: {fileID: 7376037800396599296, guid: 687571c04cc997b40b179ef9bd9d9dc4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391370314773946295, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7516228041351784496, guid: 687571c04cc997b40b179ef9bd9d9dc4,
