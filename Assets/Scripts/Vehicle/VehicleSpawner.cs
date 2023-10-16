@@ -1,19 +1,21 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class VehicleSpawner : MonoBehaviour
 {
     [SerializeField] private float spawnInterval;
     [SerializeField] private Transform[] spawnTransforms;
     [SerializeField] private bool isSpawning = true;
-    [SerializeField] private GameObject nagmash;
+
     [SerializeField] private GameEvent gameOverEvent;
+    [SerializeField] private VehicleMovementController nagmashPrefab;
+    [SerializeField] private DifficultyManager difficultyManager;
 
     private void Awake()
     {
         gameOverEvent.RegisterListener(OnGameOver);
     }
+
     void Start()
     {
         StartCoroutine(SpawnForever());
@@ -21,8 +23,8 @@ public class VehicleSpawner : MonoBehaviour
 
     void SpawnNagmash()
     {
-        var spawnTransform = spawnTransforms[Random.Range(0, spawnTransforms.Length)];
-        Instantiate(nagmash, spawnTransform.position, Quaternion.identity);
+        var spawnTransform = spawnTransforms[Random.Range(0, Mathf.Min(difficultyManager.NumberOfLanes, spawnTransforms.Length))];
+        Instantiate(nagmashPrefab, spawnTransform.position, Quaternion.identity);
     }
 
     private IEnumerator SpawnForever()
@@ -31,7 +33,6 @@ public class VehicleSpawner : MonoBehaviour
         {
             SpawnNagmash();
             yield return new WaitForSeconds(spawnInterval);
-
         }
     }
 

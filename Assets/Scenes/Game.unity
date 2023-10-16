@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 168172839}
   m_Layer: 0
-  m_Name: SpawnPoint
+  m_Name: LeftLane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,7 +938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527173540}
   m_Layer: 0
-  m_Name: SpawnPoint (1)
+  m_Name: CenterLane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1657,7 +1657,7 @@ Transform:
   m_GameObject: {fileID: 1235463469}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0.5, z: -5.84}
+  m_LocalPosition: {x: -3, y: 0.5, z: -7.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1678,11 +1678,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnInterval: 12
   spawnTransforms:
-  - {fileID: 168172839}
-  - {fileID: 527173540}
   - {fileID: 1972413492}
+  - {fileID: 527173540}
+  - {fileID: 168172839}
   isSpawning: 1
-  nagmash: {fileID: 2815281862192310567, guid: 6620dc78071d5924dae9a25834068f39, type: 3}
+  gameOverEvent: {fileID: 11400000, guid: 0d7502f8deb6ebe4da4a6118faf4ad1d, type: 2}
+  nagmashPrefab: {fileID: 6484775333510659516, guid: 6620dc78071d5924dae9a25834068f39,
+    type: 3}
+  difficultyManager: {fileID: 11400000, guid: 298c58bbb852c0647b50d94d628a2781, type: 2}
 --- !u!1 &1384713509
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2073,7 @@ MonoBehaviour:
   maxHoldTime: 1
   foodChangedEvent: {fileID: 11400000, guid: 06d8526417d56974d9c0052a500cf07b, type: 2}
   foodThrownEvent: {fileID: 11400000, guid: 2696339e8b7d5ee41a70dde9ccdd42e7, type: 2}
+  gameOverEvent: {fileID: 11400000, guid: 0d7502f8deb6ebe4da4a6118faf4ad1d, type: 2}
 --- !u!1 &1708021217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,7 +2286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1972413492}
   m_Layer: 0
-  m_Name: SpawnPoint (2)
+  m_Name: RightLane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2766,6 +2770,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630397963367468128, guid: 687571c04cc997b40b179ef9bd9d9dc4,
         type: 3}
+      propertyPath: gameOverEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d7502f8deb6ebe4da4a6118faf4ad1d,
+        type: 2}
+    - target: {fileID: 6630397963367468128, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
       propertyPath: ForceGaugeImage
       value: 
       objectReference: {fileID: 1730311692}
@@ -2878,6 +2888,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TimerText
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855473292211495611, guid: 687571c04cc997b40b179ef9bd9d9dc4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
