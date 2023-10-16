@@ -2038,6 +2038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c96abd65ebb4a4892dfd3a4c9f4c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficultySlider: {fileID: 1046299311}
   difficultyText: {fileID: 202429706}
   easy: {fileID: 11400000, guid: dcb967178aaa219408551a07a377f90e, type: 2}
   normal: {fileID: 11400000, guid: 49e5295c5b30c1b4fb5a44414e2fbd0a, type: 2}
