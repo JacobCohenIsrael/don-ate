@@ -71,16 +71,14 @@ public class ContactPointController : MonoBehaviour
         wishlist.Remove(foundWish);
         PopulateLayout();
 
-        if (wishlist.Count > 0)
-        {
-            delivered.Increment();
-        }
-        else
+        if (wishlist.Count == 0)
         {
             combo.Increment();
             OnWishFulfilledEvent?.Invoke(this, EventArgs.Empty);
             contactPointCollider.isTrigger = false;
         }
+
+        delivered.Increment();
         food.OnDelivery();
         audioSource.Play();
     }

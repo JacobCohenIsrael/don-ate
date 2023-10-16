@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed6549e380d1e649b57eac89deec706, type: 3}
   m_Name: Hard
   m_EditorClassIdentifier: 
+  title: "\u05D4\u05E9\u05E7"
   numberOfLanes: 3
   wishlistSize: 3
-  vehicleSpeed: 0.75
+  vehicleSpeed: 0.6
   vehicleAccelerationDelay: 15
