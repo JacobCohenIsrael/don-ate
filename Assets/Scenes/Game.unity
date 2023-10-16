@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -182,6 +182,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ccb4405ecf50e4a03b8bc5070595c92f, type: 3}
   - {fileID: 8300000, guid: df3e95eee83864114903d755508b11b8, type: 3}
   throwAudioSource: {fileID: 1117364803}
+  combo: {fileID: 11400000, guid: 4cb5cb10a44d1f84ba086c9261b14f7f, type: 2}
   comboSounds:
   - {fileID: 8300000, guid: 3390e0db15ea20840b671a878b1842f7, type: 3}
   - {fileID: 8300000, guid: d75a6c71b04b11d408703284081ac49b, type: 3}
@@ -192,6 +193,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 97471a41acc866e4fbaab3a7564f6fd2, type: 3}
   - {fileID: 8300000, guid: c4cec3053903007409c7cf77b2a83472, type: 3}
   comboAudioSource: {fileID: 502143595}
+  cheerAudioSource: {fileID: 1718557853}
 --- !u!1 &168172838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,7 +2219,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0177341f53988477c93c2bf0e592a840, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 1
   Mute: 0
