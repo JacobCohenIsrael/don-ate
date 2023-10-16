@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 5605983918192014444}
   - component: {fileID: 1926538099904903201}
   - component: {fileID: 9066071250206768198}
+  - component: {fileID: 8109357227018204067}
   m_Layer: 5
   m_Name: GameOverBackground
   m_TagString: Untagged
@@ -215,6 +216,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8109357227018204067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695538738488279231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338df44a3dcc84b408c7609be03e3524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 477496184483810243}
 --- !u!1 &4328969744652338952
 GameObject:
   m_ObjectHideFlags: 0

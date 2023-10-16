@@ -15,6 +15,8 @@ public class FoodCannon : MonoBehaviour
 
     [SerializeField] private GameEventArg foodChangedEvent;
     [SerializeField] private GameEvent foodThrownEvent;
+    [SerializeField] private GameEvent gameOverEvent;
+
 
     private RaycastHit hit;
 
@@ -27,17 +29,19 @@ public class FoodCannon : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
         hasStarted = true;
     }
-    
+
     private void Awake()
     {
         StartCoroutine(EnableThrow());
         foodChangedEvent.RegisterListener(OnFoodChange);
+        gameOverEvent.RegisterListener(OnGameOver);
         forceGauge.SetMaxDuration(maxHoldTime);
     }
 
     private void OnDestroy()
     {
         foodChangedEvent.UnregisterListener(OnFoodChange);
+        gameOverEvent.UnregisterListener(OnGameOver);
     }
 
     private void Update()
@@ -100,6 +104,10 @@ public class FoodCannon : MonoBehaviour
         }
     }
 
+    public void OnGameOver()
+    {
+        this.gameObject.SetActive(false);
+    }
     private void OnFoodChange(object foodPrefab)
     {
         projectile = (FoodController)foodPrefab;

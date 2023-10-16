@@ -8,6 +8,12 @@ public class VehicleSpawner : MonoBehaviour
     [SerializeField] private Transform[] spawnTransforms;
     [SerializeField] private bool isSpawning = true;
     [SerializeField] private GameObject nagmash;
+    [SerializeField] private GameEvent gameOverEvent;
+
+    private void Awake()
+    {
+        gameOverEvent.RegisterListener(OnGameOver);
+    }
     void Start()
     {
         StartCoroutine(SpawnForever());
@@ -27,6 +33,16 @@ public class VehicleSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
 
         }
+    }
+
+    public void OnGameOver()
+    {
+        this.gameObject.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        gameOverEvent.UnregisterListener(OnGameOver);
     }
 
 }
