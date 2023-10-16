@@ -143,6 +143,7 @@ MonoBehaviour:
   contactPointCollider: {fileID: 3202468007894834796}
   foodWishlistUI: {fileID: 1561178166162316908, guid: d45dd849a032c9f4dbf31e3d6f315d81,
     type: 3}
+  difficultyManager: {fileID: 11400000, guid: 298c58bbb852c0647b50d94d628a2781, type: 2}
   layout: {fileID: 4318801198984001763}
 --- !u!82 &-1154559399589462910
 AudioSource:
@@ -266,12 +267,12 @@ PrefabInstance:
     - target: {fileID: 498538607284661915, guid: e4ef614dd78240142a85444022bdf751,
         type: 3}
       propertyPath: m_CellSize.x
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 498538607284661915, guid: e4ef614dd78240142a85444022bdf751,
         type: 3}
       propertyPath: m_CellSize.y
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1978049824939707183, guid: e4ef614dd78240142a85444022bdf751,
         type: 3}
