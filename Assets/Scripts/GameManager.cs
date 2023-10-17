@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private long previousStreak;
     private void Awake()
     {
+        combo.Reset();
         combo.OnChange += OnComboChange;
     }
 
