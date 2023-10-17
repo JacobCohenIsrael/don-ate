@@ -163,7 +163,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: dc976e9d44e8567439678298ad4bf306, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -468,6 +468,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f4b1e85a2909c19478f2e5f997786f06,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8fddb1ee9b5a807419a52d5650b68a9e, type: 2}
     - target: {fileID: 919132149155446097, guid: f4b1e85a2909c19478f2e5f997786f06,
         type: 3}
       propertyPath: m_Name
@@ -562,6 +567,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bd2359376854b4e4f95346ddd58ffe29,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 098c4e12147c3534e919bfec00e63833, type: 2}
+    - target: {fileID: -7511558181221131132, guid: bd2359376854b4e4f95346ddd58ffe29,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8fddb1ee9b5a807419a52d5650b68a9e, type: 2}
     - target: {fileID: 919132149155446097, guid: bd2359376854b4e4f95346ddd58ffe29,
         type: 3}
       propertyPath: m_Name
@@ -661,6 +676,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bb54065aef07ad64aa18b2e5b37cb348,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 098c4e12147c3534e919bfec00e63833, type: 2}
+    - target: {fileID: -7511558181221131132, guid: bb54065aef07ad64aa18b2e5b37cb348,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8fddb1ee9b5a807419a52d5650b68a9e, type: 2}
     - target: {fileID: 919132149155446097, guid: bb54065aef07ad64aa18b2e5b37cb348,
         type: 3}
       propertyPath: m_Name
@@ -926,7 +951,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f86b2fea7220fc646b4cb0518c6fbb4b, type: 2}
+      objectReference: {fileID: 2100000, guid: 6269f888edfb5fa49bad78b922a0f7b2, type: 2}
     - target: {fileID: 6173477519048227320, guid: e3c2353a5dad81d4995f059154a2a97d,
         type: 3}
       propertyPath: m_Name
@@ -1402,6 +1427,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6fdc9f7ee87e1124d8d56f6c1850fc97,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc976e9d44e8567439678298ad4bf306, type: 2}
     - target: {fileID: 919132149155446097, guid: 6fdc9f7ee87e1124d8d56f6c1850fc97,
         type: 3}
       propertyPath: m_Name
@@ -1733,6 +1763,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7e3461f1946c49b4c98bbc8b3bdd83d2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc976e9d44e8567439678298ad4bf306, type: 2}
     - target: {fileID: 919132149155446097, guid: 7e3461f1946c49b4c98bbc8b3bdd83d2,
         type: 3}
       propertyPath: m_Name
@@ -1827,6 +1862,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 338dc6f333e85854fa3c4ae88c240cb5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc976e9d44e8567439678298ad4bf306, type: 2}
     - target: {fileID: 919132149155446097, guid: 338dc6f333e85854fa3c4ae88c240cb5,
         type: 3}
       propertyPath: m_Name
@@ -2321,6 +2361,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1e8690102e866a14884a46c9ede82454,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 098c4e12147c3534e919bfec00e63833, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 1e8690102e866a14884a46c9ede82454,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8fddb1ee9b5a807419a52d5650b68a9e, type: 2}
     - target: {fileID: 919132149155446097, guid: 1e8690102e866a14884a46c9ede82454,
         type: 3}
       propertyPath: m_Name
@@ -2499,6 +2549,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b6782deab9e77234cae3e0812839c1fd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8fddb1ee9b5a807419a52d5650b68a9e, type: 2}
     - target: {fileID: 919132149155446097, guid: b6782deab9e77234cae3e0812839c1fd,
         type: 3}
       propertyPath: m_Name
@@ -3240,6 +3295,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0eed43cdfd296c74aa63681db01e9fb4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8fddb1ee9b5a807419a52d5650b68a9e, type: 2}
     - target: {fileID: 919132149155446097, guid: 0eed43cdfd296c74aa63681db01e9fb4,
         type: 3}
       propertyPath: m_Name
