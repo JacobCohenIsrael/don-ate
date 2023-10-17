@@ -14,6 +14,10 @@ public class ContactPointController : MonoBehaviour
     [SerializeField] private FoodWishlistUI foodWishlistUI;
     [SerializeField] private DifficultyManager difficultyManager;
     [SerializeField] private Transform layout;
+
+    [SerializeField] private GameObject successVfx;
+    [SerializeField] private Transform successVfxTransform;
+    
     public event EventHandler OnWishFulfilledEvent;
 
     private List<FoodData> wishlist = new();
@@ -78,6 +82,7 @@ public class ContactPointController : MonoBehaviour
             contactPointCollider.isTrigger = false;
         }
 
+        Instantiate(successVfx, successVfxTransform.position, Quaternion.identity);
         delivered.Increment();
         food.OnDelivery();
         audioSource.Play();

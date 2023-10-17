@@ -48,7 +48,7 @@ public class GameSoundManager : MonoBehaviour
     
     private void OnComboChange(object sender, EventArgs e)
     {
-        if (combo.Value == 5)
+        if (combo.Value == 3)
         {
             cheerAudioSource.Play();
         }
