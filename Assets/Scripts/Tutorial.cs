@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class Tutorial : MonoBehaviour
 {
     [SerializeField] GameObject[] Screens;
+    [SerializeField] DifficultyManager difficultyManager;
+    [SerializeField] DifficultySettings normal;
 
     private int screenIndex = 0;
     private int isFirstPlay;
@@ -22,6 +24,7 @@ public class Tutorial : MonoBehaviour
                 if(isFirstPlay == 1)
                 {
                     PlayerPrefs.SetInt("FirstPlay", 0);
+                    difficultyManager.SetDifficulty(normal);
                     StartGame();
                     return;
                 }
