@@ -14,6 +14,8 @@ public class DifficultyManager : ScriptableObject
 
     public float AccelerationDelay => difficultySettings.vehicleAccelerationDelay;
 
+    public float VehicleSpawnRate => difficultySettings.vehicleSpawnRate;
+
     public void SetDifficulty(DifficultySettings settings)
     {
         difficultySettings = settings;

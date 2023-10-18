@@ -15,5 +15,6 @@ MonoBehaviour:
   title: "\u05DC\u05E7"
   numberOfLanes: 1
   wishlistSize: 1
-  vehicleSpeed: 0.3
+  vehicleSpeed: 0.4
   vehicleAccelerationDelay: 30
+  vehicleSpawnRate: 11

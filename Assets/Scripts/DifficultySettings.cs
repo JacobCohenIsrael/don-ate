@@ -8,4 +8,5 @@ public class DifficultySettings : ScriptableObject
     public int wishlistSize;
     public float vehicleSpeed;
     public float vehicleAccelerationDelay;
+    public float vehicleSpawnRate;
 }
