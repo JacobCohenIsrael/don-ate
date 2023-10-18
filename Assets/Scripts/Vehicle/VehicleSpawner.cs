@@ -32,7 +32,7 @@ public class VehicleSpawner : MonoBehaviour
         while (isSpawning)
         {
             SpawnNagmash();
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(difficultyManager.VehicleSpawnRate);
         }
     }
 
